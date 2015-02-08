@@ -1,0 +1,24 @@
+[OPTIONS]
+ERRORLOG=.\Ceta.err
+DBCS=Yes
+LCID=0x411 0x0 0x0 ;“ú–{Œê
+REPORT=Yes
+CONTENTS=HLP000001
+TITLE=Ceta ƒwƒ‹ƒv
+CNT=.\Ceta.cnt
+COPYRIGHT=•—»
+BMROOT=C:\Origin\HD158F
+ROOT=.\
+
+[FILES]
+.\Ceta.rtf
+
+[MAP]
+#include .\Ceta.hh
+
+[WINDOWS]
+main="Cetaƒwƒ‹ƒv",,27648,(r14876671),(r33023)
+
+[CONFIG]
+BrowseButtons()
+

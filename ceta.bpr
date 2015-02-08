@@ -1,0 +1,231 @@
+# ---------------------------------------------------------------------------
+!if !$d(BCB)
+BCB = $(MAKEDIR)\..
+!endif
+
+# ---------------------------------------------------------------------------
+# IDE セクション
+# ---------------------------------------------------------------------------
+# プロジェクトメイクファイルの以下のセクションは、IDE によって管理されます。
+# このセクションを変更する場合は、できるだけ IDE を使用するようにして
+# ください。
+# ---------------------------------------------------------------------------
+
+VERSION = BCB.04.04
+# ---------------------------------------------------------------------------
+PROJECT = ceta.exe
+OBJFILES = ceta.obj ceta_main_window.obj ci_select_dlg.obj misc\ver_info.obj \
+  ceta_config.obj ceta_config_dlg.obj misc\ch_config.obj misc\config.obj \
+  mdichild\ana_mdichild.obj mdichild\editorex_set_dlg.obj mdichild\search_set.obj \
+  mdichild\replace_set.obj misc\command_op.obj
+RESFILES = ceta.res
+RESDEPEN = $(RESFILES) ceta_main_window.dfm ci_select_dlg.dfm ceta_config_dlg.dfm \
+  mdichild\ana_mdichild.dfm mdichild\editorex_set_dlg.dfm mdichild\search_set.dfm \
+  mdichild\replace_set.dfm misc\command_op.dfm
+LIBFILES =
+LIBRARIES = VCLSMP40.lib Heditor_bpk.lib VCLX40.lib bcbsmp40.lib Vcl40.lib
+SPARELIBS = Vcl40.lib bcbsmp40.lib VCLX40.lib Heditor_bpk.lib VCLSMP40.lib
+PACKAGES = Vcl40.bpi Vclx40.bpi bcbsmp40.bpi Qrpt40.bpi Vcldb40.bpi ibsmp40.bpi \
+  vcldbx40.bpi TeeUI40.bpi teedb40.bpi tee40.bpi nmfast40.bpi dclocx40.bpi \
+  Heditor_bpk.bpi VclSmp40.bpi
+DEFFILE =
+# ---------------------------------------------------------------------------
+PATHCPP = .;misc;mdichild
+PATHASM = .;
+PATHPAS = .;
+PATHRC = .;
+DEBUGLIBPATH = $(BCB)\lib\debug
+RELEASELIBPATH = $(BCB)\lib\release
+USERDEFINES =
+SYSDEFINES = NO_STRICT
+# ---------------------------------------------------------------------------
+CFLAG1 = -I"..\..\Program Files\Borland\hkeymacro130";"..\..\Program Files\Borland\strprn18";"..\..\Program Files\Borland\hedit234";"..\..\Program Files\Borland\EEx208";"..\..\Program Files\Borland\bmRegExp017";"..\..\program files\borland\shbex201";mdichild;misc;"..\..\Program Files\Borland\CBuilder4\Projects";$(BCB)\include;$(BCB)\include\vcl \
+  -O2 -Hc -H=$(BCB)\lib\vcl40.csm -w -Ve -a8 -k- -vi -c -b- -w-par -w-inl -Vx -tW \
+  -tWM -D$(SYSDEFINES);$(USERDEFINES)
+PFLAGS = -U"..\..\Program Files\Borland\hedit234";mdichild;misc;"..\..\Program Files\Borland\CBuilder4\Projects";$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib;$(RELEASELIBPATH) \
+  -I"..\..\Program Files\Borland\hkeymacro130";"..\..\Program Files\Borland\strprn18";"..\..\Program Files\Borland\hedit234";"..\..\Program Files\Borland\EEx208";"..\..\Program Files\Borland\bmRegExp017";"..\..\program files\borland\shbex201";mdichild;misc;"..\..\Program Files\Borland\CBuilder4\Projects";$(BCB)\include;$(BCB)\include\vcl \
+  -$Y- -$L- -$D- -v -JPHNE -M
+RFLAGS = -i"..\..\Program Files\Borland\hkeymacro130";"..\..\Program Files\Borland\strprn18";"..\..\Program Files\Borland\hedit234";"..\..\Program Files\Borland\EEx208";"..\..\Program Files\Borland\bmRegExp017";"..\..\program files\borland\shbex201";mdichild;misc;"..\..\Program Files\Borland\CBuilder4\Projects";$(BCB)\include;$(BCB)\include\vcl
+AFLAGS = /i"..\..\Program Files\Borland\hkeymacro130" \
+  /i"..\..\Program Files\Borland\strprn18" \
+  /i"..\..\Program Files\Borland\hedit234" /i"..\..\Program Files\Borland\EEx208" \
+  /i"..\..\Program Files\Borland\bmRegExp017" \
+  /i"..\..\program files\borland\shbex201" /imdichild /imisc \
+  /i"..\..\Program Files\Borland\CBuilder4\Projects" /i$(BCB)\include \
+  /i$(BCB)\include\vcl /mx /w2 /zn
+LFLAGS = -L"..\..\Program Files\Borland\hedit234";mdichild;misc;"..\..\Program Files\Borland\CBuilder4\Projects";$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib;$(RELEASELIBPATH) \
+  -aa -Tpe -x -Gn
+# ---------------------------------------------------------------------------
+ALLOBJ = c0w32.obj sysinit.obj $(OBJFILES)
+ALLRES = $(RESFILES)
+ALLLIB = $(LIBFILES) $(LIBRARIES) import32.lib cp32mt.lib
+# ---------------------------------------------------------------------------
+!ifdef IDEOPTIONS
+
+[Version Info]
+IncludeVerInfo=1
+AutoIncBuild=1
+MajorVer=2
+MinorVer=6
+Release=0
+Build=79
+Debug=0
+PreRelease=0
+Special=0
+Private=0
+DLL=0
+Locale=1041
+CodePage=932
+
+[Version Info Keys]
+CompanyName=風晶(fenjin@nifty.com)
+FileDescription=汎用エディタ
+FileVersion=2.6.0.79
+InternalName=Ceta(ツェータ)
+LegalCopyright=Copyright(c) 1998-2003 風晶(Akira Kaze)
+LegalTrademarks=
+OriginalFilename=ceta.exe
+ProductName=Ceta(ツェータ)
+ProductVersion=2.6.0.0
+Comments=
+
+[HistoryLists\hlIncludePath]
+Count=11
+Item0=..\..\Program Files\Borland\hkeymacro130;..\..\Program Files\Borland\strprn18;..\..\Program Files\Borland\hedit234;..\..\Program Files\Borland\EEx208;..\..\Program Files\Borland\bmRegExp017;..\..\program files\borland\shbex201;mdichild;misc;..\..\Program Files\Borland\CBuilder4\Projects;$(BCB)\include;$(BCB)\include\vcl
+Item1=..\..\Program Files\Borland\strprn18;..\..\Program Files\Borland\hedit234;..\..\Program Files\Borland\EEx208;..\..\Program Files\Borland\bmRegExp017;C:\Program Files\Borland\hkeymacro130;..\..\program files\borland\shbex201;mdichild;misc;..\..\Program Files\Borland\CBuilder4\Projects;$(BCB)\include;$(BCB)\include\vcl
+Item2=..\..\Program Files\Borland\hedit234;..\..\Program Files\Borland\EEx208;C:\Program Files\Borland\bmRegExp017;..\..\program files\borland\shbex201;mdichild;misc;..\..\Program Files\Borland\CBuilder4\Projects;$(BCB)\include;$(BCB)\include\vcl
+Item3=C:\Program Files\Borland\hedit234;..\..\Program Files\Borland\EEx208;..\..\program files\borland\shbex201;mdichild;misc;..\..\Program Files\Borland\CBuilder4\Projects;$(BCB)\include;$(BCB)\include\vcl
+Item4=..\..\program files\borland\shbex201;mdichild;misc;..\..\Program Files\Borland\CBuilder4\Projects;$(BCB)\include;$(BCB)\include\vcl;C:\Program Files\Borland\EEx208
+Item5=..\..\program files\borland\shbex201;misc;..\..\Program Files\Borland\CBuilder4\Projects;$(BCB)\include;$(BCB)\include\vcl
+Item6=..\..\program files\borland\shbex201;..\khai_old;yuim;misc;..\..\Program Files\Borland\CBuilder4\Projects;$(BCB)\include;$(BCB)\include\vcl
+Item7=..\khai_old;yuim;misc;..\..\Program Files\Borland\CBuilder4\Projects;$(BCB)\include;$(BCB)\include\vcl
+Item8=yuim;misc;..\..\Program Files\Borland\CBuilder4\Projects;$(BCB)\include;$(BCB)\include\vcl
+Item9=misc;..\..\Program Files\Borland\CBuilder4\Projects;$(BCB)\include;$(BCB)\include\vcl
+Item10=..\..\Program Files\Borland\CBuilder4\Projects;$(BCB)\include;$(BCB)\include\vcl
+
+[HistoryLists\hlLibraryPath]
+Count=14
+Item0=..\..\Program Files\Borland\hedit234;mdichild;misc;..\..\Program Files\Borland\CBuilder4\Projects;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib
+Item1=..\..\Program Files\Borland\hedit234;C:\Program Files\Borland\strprn18;mdichild;misc;..\..\Program Files\Borland\CBuilder4\Projects;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib
+Item2=C:\Program Files\Borland\hedit234;mdichild;misc;..\..\Program Files\Borland\CBuilder4\Projects;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib
+Item3=mdichild;misc;..\..\Program Files\Borland\CBuilder4\Projects;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib
+Item4=..\..\Program Files\Borland\CBuilder4\Projects;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib
+Item5=..\..\Program Files\Borland\strprn18;..\..\Program Files\Borland\hedit234;mdichild;..\..\program files\borland\shbex201;misc;..\..\Program Files\Borland\CBuilder4\Projects;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib
+Item6=..\..\Program Files\Borland\strprn18;..\..\Program Files\Borland\hedit234;mdichild;..\..\program files\borland\shbex201;misc;..\..\Program Files\Borland\Delphi5\Lib;..\..\Program Files\Borland\CBuilder4\Projects;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib
+Item7=..\..\Program Files\Borland\strprn18;..\..\Program Files\Borland\hedit234;mdichild;..\..\program files\borland\shbex201;misc;..\..\Program Files\Borland\CBuilder4\Projects;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib;C:\Program Files\Borland\Delphi5\Lib
+Item8=mdichild;..\..\program files\borland\shbex201;misc;..\..\Program Files\Borland\CBuilder4\Projects;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib
+Item9=..\..\program files\borland\shbex201;misc;..\..\Program Files\Borland\CBuilder4\Projects;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib
+Item10=..\..\program files\borland\shbex201;..\khai_old;yuim;misc;..\..\Program Files\Borland\CBuilder4\Projects;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib
+Item11=..\khai_old;yuim;misc;..\..\Program Files\Borland\CBuilder4\Projects;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib
+Item12=yuim;misc;..\..\Program Files\Borland\CBuilder4\Projects;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib
+Item13=misc;..\..\Program Files\Borland\CBuilder4\Projects;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib
+
+[HistoryLists\hlDebugSourcePath]
+Count=1
+Item0=$(BCB)\source\vcl
+
+[HistoryLists\hlIntOutputDir]
+Count=1
+Item0=.[HistoryLists\hlFinalOutputDir]
+
+[Debugging]
+DebugSourceDirs=
+
+[Parameters]
+RunParams=
+HostApplication=
+RemoteHost=
+RemotePath=
+RemoteDebug=0
+
+[Compiler]
+InMemoryExe=0
+ShowInfoMsgs=0
+
+!endif
+
+# ---------------------------------------------------------------------------
+# MAKE セクション
+# ---------------------------------------------------------------------------
+# このセクションの定義は MAKE コマンドラインツールが参照します。IDE からは
+# 使用されません。
+# ---------------------------------------------------------------------------
+
+.autodepend
+# ---------------------------------------------------------------------------
+!if !$d(BCC32)
+BCC32 = bcc32
+!endif
+
+!if !$d(CPP32)
+CPP32 = cpp32
+!endif
+
+!if !$d(DCC32)
+DCC32 = dcc32
+!endif
+
+!if !$d(TASM32)
+TASM32 = tasm32
+!endif
+
+!if !$d(LINKER)
+LINKER = ilink32
+!endif
+
+!if !$d(BRCC32)
+BRCC32 = brcc32
+!endif
+
+# ---------------------------------------------------------------------------
+!if $d(PATHCPP)
+.PATH.CPP = $(PATHCPP)
+.PATH.C   = $(PATHCPP)
+!endif
+
+!if $d(PATHPAS)
+.PATH.PAS = $(PATHPAS)
+!endif
+
+!if $d(PATHASM)
+.PATH.ASM = $(PATHASM)
+!endif
+
+!if $d(PATHRC)
+.PATH.RC  = $(PATHRC)
+!endif
+# ---------------------------------------------------------------------------
+$(PROJECT): $(OBJFILES) $(RESDEPEN) $(DEFFILE)
+    $(BCB)\BIN\$(LINKER) @&&!
+    $(LFLAGS) +
+    $(ALLOBJ), +
+    $(PROJECT),, +
+    $(ALLLIB), +
+    $(DEFFILE), +
+    $(ALLRES)
+!
+# ---------------------------------------------------------------------------
+.pas.hpp:
+    $(BCB)\BIN\$(DCC32) $(PFLAGS) {$< }
+
+.pas.obj:
+    $(BCB)\BIN\$(DCC32) $(PFLAGS) {$< }
+
+.cpp.obj:
+    $(BCB)\BIN\$(BCC32) $(CFLAG1) -n$(@D) {$< }
+
+.c.obj:
+    $(BCB)\BIN\$(BCC32) $(CFLAG1) -n$(@D) {$< }
+
+.c.i:
+    $(BCB)\BIN\$(CPP32) $(CFLAG1) -n. {$< }
+
+.cpp.i:
+    $(BCB)\BIN\$(CPP32) $(CFLAG1) -n. {$< }
+
+.asm.obj:
+    $(BCB)\BIN\$(TASM32) $(AFLAGS) $<, $@
+
+.rc.res:
+    $(BCB)\BIN\$(BRCC32) $(RFLAGS) -fo$@ $<
+# ---------------------------------------------------------------------------

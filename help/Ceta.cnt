@@ -1,0 +1,45 @@
+:Base Ceta.hlp>main
+:Title Ceta ヘルプ
+:Index Ceta ヘルプ =Ceta.hlp
+1 初めての方へ =HLP000001
+1 お使いになる前に
+2 動作環境 =HLP000003
+2 コンパイラ =HLP000005
+2 設定ファイル =HLP000052
+2 著作権・転載条件など =HLP000006
+2 サポート情報 =HLP000014
+2 開発環境 =HLP000042
+2 謝辞 =HLP000037
+1 チュートリアル
+2 チュートリアル =HLP000036
+2 Borland C++ Complierのインストール =HLP000038
+2 Cetaの設定 =HLP000040
+2 「Hello, World!」 =HLP000044
+2 Internet Explorerを登録してみる =HLP000053
+2 文字色の設定を変えてみる =HLP000054
+2 ヘルプを登録してみる =HLP000055
+2 java コンパイラを登録してみる =HLP000004
+2 FORTRN 77 を登録してみる =HLP000012
+2 QKCを登録してみる =HLP000013
+1 機能リファレンス
+2 用語とか。 =HLP000020
+2 各種ダイアログボックス
+3 検索・置換ダイアログボックス =HLP000007
+3 コマンド実行ダイアログボックス =HLP000026
+3 Cetaの設定 =HLP000023
+3 「ファイルタイプ」タブページ =HLP000021
+3 「コマンド」メニュータブページ =HLP000022
+3 「ヘルプ」メニュータブページ =HLP000009
+2 文字色設定
+3 文字色設定の概要 =HLP000024
+3 Font =HLP000045
+3 Caret =HLP000046
+3 View Marks =HLP000047
+3 Leftbar Ruler Margin =HLP000048
+3 Brackets =HLP000049
+3 ReserveWordList =HLP000050
+3 WordWrap =HLP000051
+1 おまけ
+2 文字色設定のコツ =HLP000039
+2 作者の独り言 =HLP000041
+
